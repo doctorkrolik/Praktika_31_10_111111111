@@ -27,5 +27,22 @@ namespace Praktika_31_10
     
         public virtual products products { get; set; }
         public virtual users users { get; set; }
+
+        public payments(string paymentKey, decimal _price, int _count, decimal _sum, int _FK_product_id, int _FK_user_id, System.DateTime _date, string categoryName)
+        {
+            payment_key = paymentKey;
+            count = _count;
+            price = _price;
+            sum = _sum;
+            FK_product_id = _FK_product_id;
+            FK_user_id = _FK_user_id;
+            date = _date;
+            products.categories.category_name = categoryName;
+        }
+
+        public payments()
+        {
+
+        }
     }
 }

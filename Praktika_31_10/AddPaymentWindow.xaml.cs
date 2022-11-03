@@ -22,11 +22,26 @@ namespace Praktika_31_10
         public AddPaymentWindow()
         {
             InitializeComponent();
+            addPaymentComboBox.ItemsSource = PaymentDBEntities.GetContext().categories.ToList();
         }
 
         private void addPaymentWindowBtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(addPaymentComboBox.SelectedItem != null && countPicker.Text != "" && priceTextBox.Text != "" && paymentKeyTextBox.Text != "")
+            {
+
+                PaymentDBEntities.GetContext().payments.Add(new payments(paymentKeyTextBox.Text, Convert.ToDecimal(priceTextBox.Text), Convert.ToInt32(countPicker.Text), Convert.ToDecimal(Convert.ToDecimal(priceTextBox.Text) * Convert.ToInt32(countPicker.Value)), 1, 1, DateTime.Now, addPaymentComboBox.SelectedItem.ToString()));
+                PaymentDBEntities.GetContext().SaveChanges();
+                Close();
+                MessageBox.Show("Новый платёж добавлен");
+            }
+            
+        }
     }
 }
+

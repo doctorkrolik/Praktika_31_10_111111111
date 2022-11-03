@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktika_31_10"
         mc:Ignorable="d"
-        Title="AddUsersWindow" Height="200" Width="350">
+        Title="AddUsersWindow" Height="250" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

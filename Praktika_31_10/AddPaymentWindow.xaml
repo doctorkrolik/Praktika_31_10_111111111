@@ -18,22 +18,23 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Категория" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" Height="40" Width="250" HorizontalAlignment="Left"/>
+        <TextBlock Text="Категория" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="57,19,67,19"/>
+        <ComboBox x:Name="addPaymentComboBox" Grid.Row="0" Grid.Column="1" Height="40" Width="250" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,7" DisplayMemberPath="category_name"/>
 
-        <TextBlock Text="Назначение платежа" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Height="40" Width="250" HorizontalAlignment="Left"/>
+        <TextBlock Text="Назначение платежа" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="27,19,37,19"/>
+        <TextBox x:Name="paymentKeyTextBox" Grid.Row="1" Grid.Column="1" Height="40" Width="250" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,7"/>
 
-        <TextBlock Text="Количество" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
-        <wpfTool:IntegerUpDown Grid.Row="2" Grid.Column="1" Height="40" Width="126" HorizontalAlignment="Left"/>
+        <TextBlock Text="Количество" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="53,19,62,19"/>
+        <wpfTool:IntegerUpDown x:Name="countPicker" Grid.Row="2" Grid.Column="1" Height="40" Width="126" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,7"/>
 
-        <TextBlock Text="Цена" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Height="40" Width="125" HorizontalAlignment="Left"/>
-        <TextBlock Text="р." Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="127,0,0,0"/>
+        <TextBlock Text="Цена" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="71,19,80,18"/>
+        <TextBox x:Name="priceTextBox" Grid.Row="3" Grid.Column="1" Height="40" Width="125" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,6,0,7"/>
+        <TextBlock Text="р." Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="88,19,0,18"/>
 
-        <Button Content="Добавить" Height="30" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="50,0,0,0"/>
-        <Button x:Name="addPaymentWindowBtnCancel" Content="Отмена" Height="30" Grid.Row="4" Grid.Column="1" Width="100" HorizontalAlignment="Center" Margin="120,0,0,0" Click="addPaymentWindowBtnCancel_Click"/>
+        <Button Content="Добавить" Height="30" Grid.Row="4" Grid.Column="2" Width="100" HorizontalAlignment="Left" Margin="11,12,0,12" Click="Button_Click"/>
+        <Button x:Name="addPaymentWindowBtnCancel" Content="Отмена" Height="30" Grid.Row="4" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="127,12,46,12" Click="addPaymentWindowBtnCancel_Click"/>
     </Grid>
 </Window>
